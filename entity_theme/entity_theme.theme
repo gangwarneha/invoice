@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bartik theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements HOOK_preprocess_entity_print__entity().
+ */
+function entity_theme_preprocess_entity_print__content_entity_manage_invoice(array &$variables) {
+  $route = \Drupal::routeMatch();
+  $entity_type = $route->getParameter('entity_type');
+  $entity_id = $route->getParameter('entity_id');
+  // double check that printing a node, not a view or something else.
+  if ($entity_type == 'content_entity_manage_invoice') {
+    $node = \Drupal::entityTypeManager()->getStorage($entity_type)->load($entity_id);
+	$variables['id'] = $entity_id;
+    if ($node->hasField('company') && !$node->company->isEmpty()) {
+      $variables['company'] = $node->company->value;
+    }
+	if ($node->hasField('street') && !$node->street->isEmpty()) {
+      $variables['street'] = $node->street->value;
+    }
+	if ($node->hasField('name') && !$node->name->isEmpty()) {
+      $variables['name'] = $node->name->value;
+    }
+	if ($node->hasField('house_number') && !$node->house_number->isEmpty()) {
+      $variables['house_number'] = $node->house_number->value;
+    }
+	if ($node->hasField('postal_code') && !$node->postal_code->isEmpty()) {
+      $variables['postal_code'] = $node->postal_code->value;
+    }
+	if ($node->hasField('city') && !$node->city->isEmpty()) {
+      $variables['city'] = $node->city->value;
+    }
+	if ($node->hasField('invoice_date') && !$node->invoice_date->isEmpty()) {
+      $variables['invoice_date'] = $node->invoice_date->value;
+    }
+  }
+}
+

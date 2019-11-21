@@ -1,0 +1,11 @@
+name: Entity Theme
+type: theme
+base theme: bartik
+package: Entity Print
+version: VERSION
+core: 8.x
+
+entity_print:
+ node:
+   # Adds the all-nodes library to all node PDF’s.
+   all: 'entity_theme/all-nodes'

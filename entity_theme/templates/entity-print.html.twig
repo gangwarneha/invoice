@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ladento</title>
+  </head>
+  <body>
+    <header class="clearfix">
+      <h1>INVOICE</h1>
+      <div id="company" class="clearfix">
+        <div>{{company}}</div>
+		<div>{{name}}</div>
+        <div>{{street}},<br />,{{house_number}}<br /> {{city}}, {{postal_code}}</div>
+      </div>
+      <div id="project">
+        <div><span>DATE:</span> {{invoice_date}}</div>
+        <div><span>Invoice Id# </span> {{id}}</div>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th class="desc">DESCRIPTION</th>
+            <th class="desc">UNIT COSTS</th>
+            <th>QTY</th>
+            <th>TAKS</th>
+            <th>AMOUNT</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+  </body>
+</html>
