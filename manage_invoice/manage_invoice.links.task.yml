@@ -1,0 +1,22 @@
+# Define the 'local' links for the module
+
+invoice.settings_tab:
+  route_name: manage_invoice.invoice_settings
+  title: Settings
+  base_route: manage_invoice.invoice_settings
+
+invoice.view:
+  route_name: entity.content_entity_manage_invoice.canonical
+  base_route: entity.content_entity_manage_invoice.canonical
+  title: View
+
+invoice.page_edit:
+  route_name: entity.content_entity_manage_invoice.edit_form
+  base_route: entity.content_entity_manage_invoice.canonical
+  title: Edit
+
+invoice.delete_confirm:
+  route_name:  entity.content_entity_manage_invoice.delete_form
+  base_route:  entity.content_entity_manage_invoice.canonical
+  title: Delete
+  weight: 10

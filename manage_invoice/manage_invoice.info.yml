@@ -1,0 +1,10 @@
+name: Manage Invoice
+type: module
+description: 'Ladento invoice entity.'
+package: Custom
+core: 8.x
+package: Custom
+dependencies:
+  - entity_print
+# Configuration page
+configure: manage_invoice.invoice_settings

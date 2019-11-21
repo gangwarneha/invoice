@@ -1,0 +1,12 @@
+# Define the menu links for this module
+
+entity.content_entity_manage_invoice.collection:
+  title: 'Invoice Entity: Invoice Listing'
+  route_name: entity.content_entity_manage_invoice.collection
+  description: 'List Invoice'
+  weight: 10
+content_entity_manage_invoice.admin.structure.settings:
+  title: 'Invoice Settings'
+  description: 'Configure Invoice entity'
+  route_name:  manage_invoice.invoice_settings
+  parent: system.admin_structure

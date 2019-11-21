@@ -1,0 +1,11 @@
+# All action links for this module
+
+manage_invoice.add_form:
+  # Which route will be called by the link
+  route_name: entity.manage_invoice.add_form
+  title: 'Add Invoice'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.content_entity_manage_invoice.collection
+    - entity.content_entity_manage_invoice.canonical

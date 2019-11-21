@@ -1,0 +1,55 @@
+# Route name can be used in several place (links, redirects, local actions etc.)
+entity.content_entity_manage_invoice.canonical:
+  path: '/content_entity_manage_invoice/{content_entity_manage_invoice}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the invoice entity
+    _entity_view: 'content_entity_manage_invoice'
+    _title: 'invoice Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'content_entity_manage_invoice.view'
+
+entity.content_entity_manage_invoice.collection:
+  path: '/content_entity_manage_invoice/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the invoice entity.
+    _entity_list: 'content_entity_manage_invoice'
+    _title: 'invoice List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view invoice entity'
+
+entity.manage_invoice.add_form:
+  path: '/content_entity_manage_invoice/add'
+  defaults:
+  # Calls the form.add controller, defined in the invoice entity.
+    _entity_form: content_entity_manage_invoice.add
+    _title: 'Add invoice'
+  requirements:
+    _entity_create_access: 'content_entity_manage_invoice'
+
+entity.content_entity_manage_invoice.edit_form:
+  path: '/content_entity_manage_invoice/{content_entity_manage_invoice}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the invoice entity.
+    _entity_form: content_entity_manage_invoice.edit
+    _title: 'Edit invoice'
+  requirements:
+    _entity_access: 'content_entity_manage_invoice.edit'
+
+entity.content_entity_manage_invoice.delete_form:
+  path: '/invoice/{content_entity_manage_invoice}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the invoice entity.
+    _entity_form: content_entity_manage_invoice.delete
+    _title: 'Delete invoice'
+  requirements:
+    _entity_access: 'content_entity_manage_invoice.delete'
+
+manage_invoice.invoice_settings:
+  path: 'admin/structure/content_entity_manage_invoice_settings'
+  defaults:
+    _form: '\Drupal\manage_invoice\Form\invoiceSettingsForm'
+    _title: 'invoice Settings'
+  requirements:
+    _permission: 'administer invoice entity'
