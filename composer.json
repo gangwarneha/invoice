@@ -1,8 +1,7 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
+    "name": "drupal/manage_invoice",
+    "description": "Project template for invoice module with composer",
+    "type": "drupal-module",
     "authors": [
         {
             "name": "",
